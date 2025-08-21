@@ -11,6 +11,19 @@ const flash = require("connect-flash");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+const mongoose = require('mongoose');
+
+// MongoDB Atlas connection
+const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://maheshpawar2010:<Pawar321Singh02>@cluster1.toedkwc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1';
+
+mongoose.connect(mongoURI, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true 
+})
+.then(() => console.log("MongoDB Connected"))
+.catch(err => console.log("MongoDB connection error:", err));
+
+
 var app = express();
 
 // view engine setup
