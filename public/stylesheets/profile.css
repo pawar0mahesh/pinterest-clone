@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+:root {
+  --blue: #1cb4da;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(45, 45, 45);
+  background: #dadada;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.container {
+  max-width: 1100px;    
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;     
+}
+
+.profile {
+  text-align: center;
+}
+
+.profile h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+}
+
+.avatar {
+  height: 150px;
+  width: 150px;
+  border: 3px solid rgba(161, 160, 160, 0.5);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.heighlight {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2.5px;
+  -webkit-text-stroke-color: rgb(45, 45, 45);
+}
+
+.icons a {
+  font-size: 28px;
+  margin-right: 8px;
+}
+
+.button {
+  background-color: rgb(248, 30, 59);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-block;
+}
+.buttonfeed {
+  background-color: rgb(20, 161, 15);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: white;
+  margin-left: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.submit{
+  background-color: #a758dbdd;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.button:hover {
+  background-color: rgb(185, 11, 35);
+}
+.buttonfeed:hover {
+  background-color: rgb(7, 116, 7);
+}
+
+.icons a:hover {
+  color: var(--blue);
+}
+.submit:hover {
+  background-color: rgb(122, 14, 199);
+}
+
+
+.const {
+  margin: 2rem auto;
+  max-width: 1100px;
+  padding: 1rem;
+}
+
+.cards {
+  column-count: 3;
+  column-gap: 1rem;
+}
+
+.card {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .cards { column-count: 2; }
+  .profile h1 { font-size: 2rem; }
+}
+
+@media (max-width: 576px) {
+  .cards { column-count: 1; }
+  .avatar { height: 100px; width: 100px; }
+  .profile h1 { font-size: 1.5rem; }
+}
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+  display: block;
+}
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar {
+  height: 150px;
+  width: 150px;
+  border: 3px solid rgba(161, 160, 160, 0.5);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.edit-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 35px;
+  background: #d5d4d4;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  color: #333;
+  font-size: 15px;
+}
+
+.edit-icon:hover {
+  background: #b3b2b2;
+}

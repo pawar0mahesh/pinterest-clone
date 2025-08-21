@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-omYF7zF2z+yt7xF0bXzTYnW+5x6lFqf8J2ExWExoJ6X9bMqfKq8JG5WksRcIY3EAwBFX3xPpELe1tYu0Sfr4+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  </head>
+
+  <body>
+    <main>
+      <div class="container">
+
+   <div class="profile">
+<div class="avatar-wrapper">
+  <img src="/images/uploads/<%= user.dp ? user.dp : 'default.png' %>" alt="image" class="avatar">
+
+  <!-- Pencil icon triggers file input -->
+  <form action="/change-dp" method="post" enctype="multipart/form-data">
+    <label for="profileImage" class="edit-icon">
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    </label>
+    <input type="file" id="profileImage" name="profileImage" style="display: none;" onchange="this.form.submit()">
+  </form>
+</div>
+
+     <p class="">@<%= user.username %></p>
+     <h1>I <span class="heighlight">am</span> <%= user.fullname%></h1>
+     <p class="">I am a good insaan and i will post bahut acche photos :)<br> <br>
+     <a href="/login" class="button"> Logout</a>
+     <a href="/feed" class="buttonfeed"> Feed</a>
+     <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="text" name="filecaption" placeholder="some caption">
+      <input type="file" name="file">
+      <input class="submit" type="submit">
+     </form>
+
+     <div class="icons">
+       <a href=""><i class="bi bi-github"></i></a>
+       <a href=""><i class="bi bi-twitter"></i></a>
+       <a href=""><i class="bi bi-linkedin"></i></a>
+     </div>
+   </div>
+ </div>
+    </main>
+    <div class="const">
+      <div class="cards flex">
+        <% user.posts.forEach(function(post){%>
+         <div class="card" style="width: 18rem;">
+  <img src="/images/uploads/<%= post.image %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= post.imageText %></h5>
+
+    <form action="/delete-post/<%= post._id %>" method="post">
+      <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+    </form>
+  </div>
+</div>
+
+          <%})%>
+      </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+</html>
+
